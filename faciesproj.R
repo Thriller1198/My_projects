@@ -78,3 +78,5 @@ final_wf<-workflow()%>%add_recipe(df_recipe)%>%add_model(finalize_model)
 
 final_fit<-final_wf%>%last_fit(df_split)
 final_fit%>%collect_metrics()
+
+predictions<-final_fit%>%collect_predictions()
